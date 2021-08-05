@@ -1,19 +1,19 @@
 import React from "react";
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-import Navbar from './Navbar.jsx';
-import Home from './Home.jsx';
-import Character from "./Character.jsx";
-import Episode from "./Episode.jsx";
-import EpisodeList from "./EpisodeList.jsx";
-import LocationList from "./LocationList.jsx";
+import Navbar from './UI/Navbar';
+import Home from './Home/Home';
+import Character from "./Character/Character";
+import Episode from "./Episode/Episode";
+import EpisodeList from "./Episode/EpisodeList";
+import LocationList from "./Location/LocationList";
 
 const App = () => {
   return (
     <Router>
-      <div className="app">
+      <div className="font-mono bg-gradient-to-r from-green-400 to-blue-500">
         <Navbar />
-        <div className="container">
+        <div className="">
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/show-one/:id" component={Character} />

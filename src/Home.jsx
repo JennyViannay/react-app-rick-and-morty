@@ -21,7 +21,7 @@ const Home = () => {
       console.log(response.data)
       getCharacters(response.data.results);
       getInfos(response.data.info);
-      setPage(parseInt(infos.next.replace('https://rickandmortyapi.com/api/character?page=', '')));
+      setPage(page + 1);
     }, []);
   };
 
@@ -30,7 +30,7 @@ const Home = () => {
       console.log(response.data)
       getCharacters(response.data.results);
       getInfos(response.data.info);
-      setPage(parseInt(infos.next.replace('https://rickandmortyapi.com/api/character?page=', '')));
+      setPage(page - 1);
     }, []);
   };
 
@@ -43,8 +43,16 @@ const Home = () => {
         <h1>All characters {infos.count}</h1>
         <p>Nb of pages {infos.pages}</p>
         <p>Page Result {page}</p>
-        <button onClick={handleChangePrev} className="btn btn-primary m-1">Prev</button>
-        <button onClick={handleChangeNext} className="btn btn-primary m-1">Next</button>
+        { infos.prev === null ? 
+          <button onClick={handleChangePrev} className="btn btn-primary m-1 disabled">Prev</button>
+          :
+          <button onClick={handleChangePrev} className="btn btn-primary m-1">Prev</button>
+        }
+        { infos.next === null ? 
+          <button onClick={handleChangeNext} className="btn btn-primary m-1 disabled">Next</button>
+          :
+          <button onClick={handleChangeNext} className="btn btn-primary m-1">Next</button>
+        }
       </div>
 
       {characters ? (

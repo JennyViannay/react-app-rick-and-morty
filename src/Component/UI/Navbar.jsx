@@ -14,11 +14,6 @@ const Navbar = () => {
             <a href="/episodes">Episodes</a>
           </span>
         </div>
-        <div className="text-3xl font-extrabold mt-4">
-          <span className="bg-clip-text text-blue-500">
-            <a href="/locations">Locations</a>
-          </span>
-        </div>
       </div>
     </nav>
   );

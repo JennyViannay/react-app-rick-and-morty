@@ -966,6 +966,8 @@ module.exports = {
     width: ['responsive'],
     wordBreak: ['responsive'],
     zIndex: ['responsive', 'focus-within', 'focus'],
+    blur: ['hover', 'focus'],
+    filter: ['hover', 'focus']
   },
   plugins: [],
 }

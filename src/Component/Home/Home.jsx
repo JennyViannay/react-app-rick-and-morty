@@ -61,6 +61,13 @@ const Home = () => {
             <p className="alert alert-warning">Loading data...</p>
           )}
       </div>
+
+      <div className="row mt-4 p-3">
+        <div className="col-lg-3 col-md-4 col-xs-8 m-auto bg-blue-100 border border-blue-400 text-blue-700 px-4 py-3 rounded relative shadow-lg text-center">
+          <p>Page : <span className="text-pink-600">{page}</span>/{infos.pages}</p>
+          <Pagination infos={infos} page={page} handleChangeNext={handleChangeNext} handleChangePrev={handleChangePrev} />
+        </div>
+      </div>
     </div>
   );
 };

@@ -31,7 +31,7 @@ const Episode = () => {
       {episode ? (
         <div>
           <div className="row">
-            <h1 className="text-xl font-extrabold">{episode.episode} : {episode.name}</h1>
+            <h1 className="text-3xl font-extrabold">{episode.episode} : {episode.name}</h1>
             <p>{episode.air_date}</p>
             <p className="text-xl mt-5">Characters : </p>
           </div>

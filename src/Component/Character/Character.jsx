@@ -13,7 +13,7 @@ const Character = () => {
     axios
       .get("https://rickandmortyapi.com/api/character/" + params.id)
       .then(response => getCharacter(response.data));
-  }, []);
+  }, [params]);
 
   return (
     <div>

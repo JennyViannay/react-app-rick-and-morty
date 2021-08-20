@@ -2,9 +2,11 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="text-center">
-      Rick & Morty
-    </footer>
+    <div>
+      <footer className="text-center p-3">
+        Rick & Morty
+      </footer>
+    </div>
   );
 };
 

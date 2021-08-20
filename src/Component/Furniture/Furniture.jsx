@@ -20,7 +20,7 @@ const Furniture = () => {
     }
 
     return (
-        <div className="container mt-5">
+        <div className="container h-screen p-5">
             <ul>
                 {list.length ? list.map((item, key) => {
                     return (

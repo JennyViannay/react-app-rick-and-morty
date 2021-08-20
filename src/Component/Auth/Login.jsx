@@ -4,19 +4,19 @@ import axios from "axios";
 import validator from 'validator';
 import AuthContext from "../../Context/AuthContext";
 
-const UserCard = () => {
+const Login = () => {
     const history = useHistory();
     const { authenticated, setAuthenticated } = useContext(AuthContext);
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
     const [error, setError] = useState();
 
-    const handleChangeEmail = (e) => {
+    const handleEmail = (e) => {
         if (validator.isEmail(e.target.value)) { setEmail(e.target.value); setError(''); }
         else setError('Enter valid Email!');
     }
 
-    const handleChangePassword = (e) => {
+    const handlePassword = (e) => {
         setPassword(e.target.value);
     }
 
@@ -39,7 +39,7 @@ const UserCard = () => {
                 }
             }, [])
     }
-    console.log(localStorage)
+    
     const userAuthenticated = (token) => {
         console.log(token)
         axios.get('http://localhost:5000/api/isUserAuth', {
@@ -52,7 +52,7 @@ const UserCard = () => {
     }
 
     return (
-        <div className="container bg-gray-700 p-4 rounded">
+        <div className="container p-4 rounded h-screen">
             {authenticated.auth ?
                 <div className="text-white">
                     Token is {authenticated.token}
@@ -62,11 +62,11 @@ const UserCard = () => {
                    {error ?  <p className="alert alert-danger">{error}</p> : ''}
                     <div className="form-group">
                         <label htmlFor="email" className="text-white">Email</label>
-                        <input type="email" name="email" id="email" className="form-control" required onChange={handleChangeEmail} />
+                        <input type="email" name="email" id="email" className="form-control" required onChange={handleEmail} />
                     </div>
                     <div className="form-group">
                         <label htmlFor="password" className="text-white">Password</label>
-                        <input type="password" name="password" id="password" className="form-control" required onChange={handleChangePassword} />
+                        <input type="password" name="password" id="password" className="form-control" required onChange={handlePassword} />
                     </div>
                     <div className="form-group mt-3 text-center">
                         <button type="submit" className="btn bg-blue-200">Login</button>
@@ -77,4 +77,4 @@ const UserCard = () => {
     );
 };
 
-export default UserCard;
+export default Login;
